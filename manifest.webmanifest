@@ -1,9 +1,0 @@
-{
-  "name": "GROWX Member Platform",
-  "short_name": "GROWX",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#070b18",
-  "theme_color": "#070b18",
-  "orientation": "portrait"
-}
