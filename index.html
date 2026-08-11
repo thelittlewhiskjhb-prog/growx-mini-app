@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#070b18">
+  <title>GROWX</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="stars"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-orb"><span>G</span></div>
+        <div>
+          <div class="brand-name">GROW<span>X</span></div>
+          <div class="brand-sub">FUTURE REWARDS</div>
+        </div>
+      </div>
+      <button class="icon-btn" id="settingsBtn" aria-label="Settings">⚙</button>
+    </header>
+
+    <section id="pinScreen" class="screen active">
+      <div class="hero-orb">
+        <div class="orb-core">🌳</div>
+      </div>
+      <h1>Welcome back</h1>
+      <p class="muted">Enter your 4-digit security PIN</p>
+
+      <div class="pin-dots" id="pinDots">
+        <i></i><i></i><i></i><i></i>
+      </div>
+      <div class="pin-code" id="pinDisplay">Enter PIN</div>
+
+      <div class="keypad">
+        <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+        <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+        <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+        <button class="blank"></button><button data-key="0">0</button><button data-key="back">⌫</button>
+      </div>
+      <p class="tiny">Prototype mode • PIN is not sent anywhere in this demo</p>
+    </section>
+
+    <section id="dashboard" class="screen">
+      <div class="welcome-row">
+        <div>
+          <div class="eyebrow">GOOD AFTERNOON</div>
+          <h2 id="clientName">Client</h2>
+        </div>
+        <div class="client-code">CODE <b id="clientCode">KTRXWQ</b></div>
+      </div>
+
+      <div class="balance-card">
+        <div class="glow"></div>
+        <div class="card-label">TOTAL BALANCE</div>
+        <div class="balance" id="balance">R 8,450.00</div>
+        <div class="balance-meta">
+          <span>Today's reward <b id="todayReward">+ R500.00</b></span>
+          <span>Available <b>R1,250.00</b></span>
+        </div>
+      </div>
+
+      <div class="tree-card">
+        <div class="tree-art">🌳</div>
+        <div class="tree-info">
+          <div class="eyebrow">ACTIVE PACKAGE</div>
+          <h3>R5,000 GROWTH</h3>
+          <div class="progress"><span style="width:82%"></span></div>
+          <div class="progress-meta"><span>82% progress</span><span>DAY 23 / 30</span></div>
+        </div>
+      </div>
+
+      <div class="count-card">
+        <span>⏱ NEXT REWARD UPDATE</span>
+        <strong id="countdown">03:42:18</strong>
+      </div>
+
+      <div class="grid">
+        <button class="tile" data-page="packages"><span>💎</span><b>Packages</b><small>View plans</small></button>
+        <button class="tile" data-page="wallet"><span>💰</span><b>Wallet</b><small>Balance & history</small></button>
+        <button class="tile" data-page="withdraw"><span>💳</span><b>Withdraw</b><small>Request payout</small></button>
+        <button class="tile" data-page="security"><span>🔐</span><b>Security</b><small>PIN & sessions</small></button>
+      </div>
+    </section>
+
+    <section id="packages" class="screen">
+      <button class="back" data-page="dashboard">← Dashboard</button>
+      <div class="eyebrow">GROWX PLANS</div>
+      <h2>Choose your growth level</h2>
+      <p class="muted">Prototype display of the configured package catalogue.</p>
+      <div id="packageList" class="package-list"></div>
+    </section>
+
+    <section id="wallet" class="screen">
+      <button class="back" data-page="dashboard">← Dashboard</button>
+      <div class="eyebrow">YOUR WALLET</div>
+      <h2>R 8,450.00</h2>
+      <div class="wallet-stat"><span>Today's reward</span><b>+ R500.00</b></div>
+      <div class="wallet-stat"><span>Available to withdraw</span><b>R1,250.00</b></div>
+      <h3 class="section-title">Recent activity</h3>
+      <div class="transaction"><span>🌱 Daily reward</span><b>+R500.00</b></div>
+      <div class="transaction"><span>🌱 Daily reward</span><b>+R500.00</b></div>
+      <div class="transaction"><span>💳 Withdrawal</span><b>−R1,000.00</b></div>
+    </section>
+
+    <section id="withdraw" class="screen">
+      <button class="back" data-page="dashboard">← Dashboard</button>
+      <div class="eyebrow">WITHDRAWAL</div>
+      <h2>Request a withdrawal</h2>
+      <div class="form-card">
+        <label>Amount</label>
+        <div class="money-input"><span>R</span><input id="withdrawAmount" inputmode="decimal" placeholder="0.00"></div>
+        <label>Method</label>
+        <select><option>Bank account</option><option>Approved alternative</option></select>
+        <button class="primary" id="withdrawBtn">REQUEST WITHDRAWAL</button>
+        <p class="tiny">Demo only: no money movement occurs in this prototype.</p>
+      </div>
+    </section>
+
+    <section id="security" class="screen">
+      <button class="back" data-page="dashboard">← Dashboard</button>
+      <div class="eyebrow">SECURITY CENTRE</div>
+      <h2>Account protection</h2>
+      <div class="security-row"><span>Client code</span><b>KTRXWQ</b></div>
+      <div class="security-row"><span>PIN protection</span><b class="ok">● ACTIVE</b></div>
+      <div class="security-row"><span>Session</span><b class="ok">● SECURE</b></div>
+      <button class="secondary" id="lockBtn">LOCK APP</button>
+    </section>
+
+    <nav class="bottom-nav">
+      <button data-page="dashboard">⌂<span>Home</span></button>
+      <button data-page="packages">◇<span>Plans</span></button>
+      <button data-page="wallet">◈<span>Wallet</span></button>
+      <button data-page="withdraw">⇧<span>Withdraw</span></button>
+    </nav>
+  </main>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
