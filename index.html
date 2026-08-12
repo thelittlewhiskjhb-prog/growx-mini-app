@@ -1,190 +1,228 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GROWX</title><link rel="stylesheet" href="styles.css">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#070b18">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="GROWX">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon-180.png">
-
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GROWX</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070b18">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="GROWX">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-180.png">
 </head>
 <body>
-<div class="bg"><i></i><i></i><i></i></div>
-<main class="app">
+  <div class="bg"><i></i><i></i><i></i></div>
+  <main class="app">
 
-<section id="welcome" class="screen active">
-  <div class="brand">GROW<span>X</span></div><div class="tag">FUTURE REWARDS • MEMBER PLATFORM</div>
-  <div class="hero">
-  <div class="ring"><div class="orb">🌳</div><span class="orbit orbit1"></span><span class="orbit orbit2"></span></div>
-</div>
-<div class="pulseStats"><div><b>10%</b><small>DAILY REWARD</small></div><div><b>10</b><small>PACKAGES</small></div><div><b>USDT</b><small>TRC20 PAYMENTS</small></div></div>
-  <div class="eyebrow">WELCOME TO THE FUTURE</div>
-  <h1>GROW.<br><span>TRACK.</span><br>MANAGE.</h1>
-  <p>Your next-generation member experience.</p>
-  <button class="primary" onclick="go('login')">MEMBER LOGIN <b>→</b></button>
-  <button class="secondary" onclick="go('register')">NEW MEMBER REGISTRATION</button>
-  <button class="adminLink" onclick="adminLogin()">ADMIN ACCESS</button>
-  <small>Free front-end prototype • GitHub Pages ready</small>
-</section>
+    <section id="welcome" class="screen active">
+      <div class="brand">GROW<span>X</span></div>
+      <div class="tag">FUTURE REWARDS • MEMBER PLATFORM</div>
+      <div class="hero">
+        <div class="ring"><div class="orb">🌳</div><span class="orbit orbit1"></span><span class="orbit orbit2"></span></div>
+      </div>
+      <div class="pulseStats">
+        <div><b>10%</b><small>DAILY REWARD</small></div>
+        <div><b>10</b><small>PACKAGES</small></div>
+        <div><b>USDT</b><small>TRC20 PAYMENTS</small></div>
+      </div>
+      <div class="eyebrow">WELCOME TO THE FUTURE</div>
+      <h1>GROW.<br><span>TRACK.</span><br>MANAGE.</h1>
+      <p>Your next-generation member experience.</p>
+      <button class="primary" onclick="go('login')">MEMBER LOGIN <b>→</b></button>
+      <button class="secondary" onclick="go('register')">NEW MEMBER REGISTRATION</button>
+      <button class="adminLink" onclick="adminLogin()">ADMIN ACCESS</button>
+      <small>Production with Supabase • Secure backend</small>
+    </section>
 
-<section id="register" class="screen">
-  <div class="pageGlow">✦</div>
-  <button class="back" onclick="go('welcome')">‹ BACK</button><div class="eyebrow">NEW MEMBER</div><h2>CREATE ACCOUNT</h2>
-  <p>Cellphone number and 4-digit GROW RUSH PIN.</p>
-  <div class="glass">
-    <label>CELLPHONE NUMBER</label><input id="regPhone" inputmode="tel" placeholder="+27 00 000 0000">
-    <label>CREATE 4-DIGIT PIN</label><input id="regPin1" type="password" inputmode="numeric" maxlength="4" placeholder="••••">
-    <label>CONFIRM PIN</label><input id="regPin2" type="password" inputmode="numeric" maxlength="4" placeholder="••••">
-    <button class="primary" onclick="register()">CREATE ACCOUNT <b>→</b></button>
-  </div>
-</section>
+    <section id="register" class="screen">
+      <div class="pageGlow">✦</div>
+      <button class="back" onclick="go('welcome')">‹ BACK</button>
+      <div class="eyebrow">NEW MEMBER</div>
+      <h2>CREATE ACCOUNT</h2>
+      <p>Cellphone number and 4-digit GROW RUSH PIN.</p>
+      <div class="glass">
+        <label>CELLPHONE NUMBER</label>
+        <input id="regPhone" inputmode="tel" placeholder="+27 00 000 0000">
+        <label>CREATE 4-DIGIT PIN</label>
+        <input id="regPin1" type="password" inputmode="numeric" maxlength="4" placeholder="••••">
+        <label>CONFIRM PIN</label>
+        <input id="regPin2" type="password" inputmode="numeric" maxlength="4" placeholder="••••">
+        <button class="primary" onclick="register()">CREATE ACCOUNT <b>→</b></button>
+      </div>
+    </section>
 
-<section id="login" class="screen">
-  <div class="pageGlow">✦</div>
-  <button class="back" onclick="go('welcome')">‹ BACK</button><div class="eyebrow">EXISTING MEMBER</div><h2>WELCOME BACK</h2>
-  <p>Secure member access.</p>
-  <div class="glass">
-    <label>CELLPHONE NUMBER</label><input id="loginPhone" inputmode="tel" placeholder="+27 00 000 0000">
-    <label>4-DIGIT GROW RUSH PIN</label><input id="loginPin" type="password" inputmode="numeric" maxlength="4" placeholder="••••">
-    <button class="primary" onclick="login()">SECURE LOGIN <b>→</b></button>
-    <button class="secondary" onclick="alert('PIN recovery will be connected to the secure backend later.')">FORGOT PIN</button>
-  </div>
-</section>
+    <section id="login" class="screen">
+      <div class="pageGlow">✦</div>
+      <button class="back" onclick="go('welcome')">‹ BACK</button>
+      <div class="eyebrow">EXISTING MEMBER</div>
+      <h2>WELCOME BACK</h2>
+      <p>Secure member access.</p>
+      <div class="glass">
+        <label>CELLPHONE NUMBER</label>
+        <input id="loginPhone" inputmode="tel" placeholder="+27 00 000 0000">
+        <label>4-DIGIT GROW RUSH PIN</label>
+        <input id="loginPin" type="password" inputmode="numeric" maxlength="4" placeholder="••••">
+        <button class="primary" onclick="login()">SECURE LOGIN <b>→</b></button>
+        <button class="secondary" onclick="alert('PIN recovery will be available soon.')">FORGOT PIN</button>
+      </div>
+    </section>
 
-<section id="dashboard" class="screen">
-  <div class="nav"><div class="brand miniBrand">GROW<span>X</span></div><button class="icon" onclick="logout()">↪</button></div>
-  <div class="eyebrow">MEMBER DASHBOARD</div><h2>YOUR GROWTH</h2>
-  <div class="liveTicker"><span class="dot"></span> LIVE MEMBER CENTRE <span>•</span> REWARDS TRACKING ACTIVE</div>
-  <div class="heroCard">
-    <div class="eyebrow">CLIENT CODE</div><div class="code" id="clientCode">KTRXWQ</div>
-    <div class="eyebrow">TOTAL BALANCE</div><div class="money" id="balanceDisplay">$ 650.00</div>
-    <div class="stats"><span>TODAY <b id="todayReward">+$65.00</b></span><span>AVAILABLE <b id="availableDisplay">$650.00</b></span></div>
-  </div>
+    <section id="dashboard" class="screen">
+      <div class="nav"><div class="brand miniBrand">GROW<span>X</span></div><button class="icon" onclick="logout()">↪</button></div>
+      <div class="eyebrow">MEMBER DASHBOARD</div>
+      <h2>YOUR GROWTH</h2>
+      <div class="liveTicker"><span class="dot"></span> LIVE MEMBER CENTRE <span>•</span> REWARDS TRACKING ACTIVE</div>
+      <div class="heroCard">
+        <div class="eyebrow">CLIENT CODE</div>
+        <div class="code" id="clientCode">------</div>
+        <div class="eyebrow">TOTAL BALANCE</div>
+        <div class="money" id="balanceDisplay">$ 0.00</div>
+        <div class="stats"><span>TODAY <b id="todayReward">+$0.00</b></span><span>AVAILABLE <b id="availableDisplay">$0.00</b></span></div>
+      </div>
 
-  <div class="chartCard glass">
-    <div class="chartHead"><div><div class="eyebrow">REWARD PERFORMANCE</div><strong>7 DAY ACTIVITY</strong></div><span class="trend">+10% / DAY</span></div>
-    <canvas id="rewardChart" height="150"></canvas>
-  </div>
+      <div class="chartCard glass">
+        <div class="chartHead"><div><div class="eyebrow">REWARD PERFORMANCE</div><strong>7 DAY ACTIVITY</strong></div><span class="trend">+10% / DAY</span></div>
+        <canvas id="rewardChart" height="150"></canvas>
+      </div>
 
-  <div class="packageCard"><div class="cube">✦</div><div><div class="eyebrow">ACTIVE PACKAGES</div><strong id="activePackage">2 PACKAGES</strong><small id="activeReward">$65.00 DAILY REWARD • READY</small></div></div>
+      <div class="packageCard"><div class="cube">✦</div><div><div class="eyebrow">ACTIVE PACKAGES</div><strong id="activePackage">0 PACKAGES</strong><small id="activeReward">$0.00 DAILY REWARD</small></div></div>
 
-  <div class="rewardBar">
-    <div><div class="eyebrow">DAILY REWARD</div><b id="rewardText">+$65.00 READY TO CLAIM</b></div>
-    <button id="claimBtn" class="primary smallBtn" onclick="claimReward()">CLAIM</button>
-  </div>
+      <div class="rewardBar">
+        <div><div class="eyebrow">DAILY REWARD</div><b id="rewardText">+$0.00 READY TO CLAIM</b></div>
+        <button id="claimBtn" class="primary smallBtn" onclick="claimReward()">CLAIM</button>
+      </div>
 
-  <div class="gamePromo" onclick="go('game')">
-  <div class="gamePromoIcon">🎮</div>
-  <div class="gamePromoText"><div class="eyebrow">NEW ARCADE</div><strong>GROW RUSH</strong><small>Tap • Grow • Beat your best</small></div>
-  <div class="gameArrow">→</div>
-</div>
-<div class="tiles">
-    <button onclick="go('packages')">◈<b>PACKAGES</b><small>Choose package</small></button>
-    <button onclick="go('wallet')">◉<b>WALLET</b><small>Balance & activity</small></button>
-    <button onclick="go('recharge')">＋<b>RECHARGE</b><small>USDT TRC20</small></button>
-    <button onclick="go('withdraw')">↗<b>WITHDRAW</b><small>USDT TRC20</small></button>
-    <button onclick="go('gift')">🎁<b>GIFT CODE</b><small>Redeem code</small></button>
-    <button onclick="go('game')">🎮<b>GROW GAME</b><small>Play & score</small></button>
-  </div>
-</section>
+      <div class="gamePromo" onclick="go('game')">
+        <div class="gamePromoIcon">🎮</div>
+        <div class="gamePromoText"><div class="eyebrow">NEW ARCADE</div><strong>GROW RUSH</strong><small>Tap • Grow • Beat your best</small></div>
+        <div class="gameArrow">→</div>
+      </div>
+      <div class="tiles">
+        <button onclick="go('packages')">◈<b>PACKAGES</b><small>Choose package</small></button>
+        <button onclick="go('wallet')">◉<b>WALLET</b><small>Balance & activity</small></button>
+        <button onclick="go('recharge')">＋<b>RECHARGE</b><small>USDT TRC20</small></button>
+        <button onclick="go('withdraw')">↗<b>WITHDRAW</b><small>USDT TRC20</small></button>
+        <button onclick="go('gift')">🎁<b>GIFT CODE</b><small>Redeem code</small></button>
+        <button onclick="go('game')">🎮<b>GROW GAME</b><small>Play & score</small></button>
+      </div>
+    </section>
 
-<section id="packages" class="screen">
-  <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
-  <div class="eyebrow">PACKAGE CATALOGUE</div><h2>CHOOSE YOUR PACKAGE</h2>
-  <div class="sectionBanner">⚡ BUILD YOUR GROWTH PLAN <span>10% DAILY</span></div>
-  <p>All packages are displayed in USD. Daily reward shown is 10% of the package value.</p>
-  <div id="packageList" class="list"></div>
-</section>
+    <section id="packages" class="screen">
+      <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
+      <div class="eyebrow">PACKAGE CATALOGUE</div>
+      <h2>CHOOSE YOUR PACKAGE</h2>
+      <div class="sectionBanner">⚡ BUILD YOUR GROWTH PLAN <span>10% DAILY</span></div>
+      <p>All packages are displayed in USD. Daily reward shown is 10% of the package value.</p>
+      <div id="packageList" class="list"></div>
+    </section>
 
-<section id="wallet" class="screen">
-  <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
-  <div class="eyebrow">WALLET</div><h2 id="walletBalance">$650.00</h2>
-  <div class="glass">
-    <div class="row"><span>TODAY'S REWARD</span><b id="walletToday">+$65.00</b></div>
-    <div class="row"><span>AVAILABLE</span><b id="walletAvailable">$650.00</b></div>
-    <div class="row"><span>ACTIVE PACKAGES</span><b id="walletPackages">2</b></div>
-    <div class="row"><span>ASSET</span><b>USDT</b></div>
-    <div class="row"><span>NETWORK</span><b>TRON (TRC20)</b></div>
-  </div>
-  <div class="eyebrow history">RECENT ACTIVITY</div><div id="walletActivity"></div>
-  <div class="eyebrow history">WITHDRAWAL STATUS</div><div id="walletWithdrawals"></div>
-</section>
+    <section id="wallet" class="screen">
+      <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
+      <div class="eyebrow">WALLET</div>
+      <h2 id="walletBalance">$0.00</h2>
+      <div class="glass">
+        <div class="row"><span>TODAY'S REWARD</span><b id="walletToday">+$0.00</b></div>
+        <div class="row"><span>AVAILABLE</span><b id="walletAvailable">$0.00</b></div>
+        <div class="row"><span>ACTIVE PACKAGES</span><b id="walletPackages">0</b></div>
+        <div class="row"><span>ASSET</span><b>USDT</b></div>
+        <div class="row"><span>NETWORK</span><b>TRON (TRC20)</b></div>
+      </div>
+      <div class="eyebrow history">RECENT ACTIVITY</div>
+      <div id="walletActivity"></div>
+      <div class="eyebrow history">WITHDRAWAL STATUS</div>
+      <div id="walletWithdrawals"></div>
+    </section>
 
+    <section id="withdraw" class="screen">
+      <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
+      <div class="eyebrow">PAYOUT CENTRE</div>
+      <h2>WITHDRAW USDT</h2>
+      <div class="glass">
+        <div class="networkBadge">₮ USDT • TRON (TRC20) ONLY</div>
+        <label>USDT WALLET ADDRESS</label>
+        <input id="usdtAddress" placeholder="TRON / TRC20 wallet address">
+        <label>AMOUNT</label>
+        <input id="usdtAmount" inputmode="decimal" placeholder="USDT 0.00">
+        <div class="warning">Only use a compatible TRON (TRC20) USDT address. Verify the address before submitting.</div>
+        <button class="primary" onclick="withdrawUSDT()">REQUEST USDT WITHDRAWAL</button>
+      </div>
+      <div class="eyebrow history">YOUR WITHDRAWALS</div>
+      <div id="withdrawalStatus"></div>
+    </section>
 
+    <section id="recharge" class="screen">
+      <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
+      <div class="eyebrow">USDT RECHARGE</div>
+      <h2>ADD FUNDS</h2>
+      <div class="glass">
+        <div class="networkBadge">₮ USDT • TRON (TRC20)</div>
+        <h3>Recharge instructions</h3>
+        <ol class="steps">
+          <li>Open your crypto wallet or exchange.</li>
+          <li>Select <b>USDT</b> and choose the <b>TRON / TRC20</b> network.</li>
+          <li>Enter the official GROWX USDT address supplied by admin.</li>
+          <li>Send the amount and keep your transaction hash/reference.</li>
+          <li>Submit your transaction reference for verification.</li>
+        </ol>
+        <div class="warning">The GROWX USDT deposit address is not published yet. Do not send funds until an official address is provided by admin.</div>
+        <label>AMOUNT (USDT)</label>
+        <input id="rechargeAmount" inputmode="decimal" placeholder="0.00">
+        <label>TRANSACTION HASH / REFERENCE</label>
+        <input id="rechargeRef" placeholder="Paste transaction reference">
+        <button class="primary" onclick="submitRecharge()">SUBMIT RECHARGE</button>
+      </div>
+    </section>
 
-<section id="withdraw" class="screen">
-  <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
-  <div class="eyebrow">PAYOUT CENTRE</div><h2>WITHDRAW USDT</h2>
-  <div class="glass">
-    <div class="networkBadge">₮ USDT • TRON (TRC20) ONLY</div>
-    <label>USDT WALLET ADDRESS</label><input id="usdtAddress" placeholder="TRON / TRC20 wallet address">
-    <label>AMOUNT</label><input id="usdtAmount" inputmode="decimal" placeholder="USDT 0.00">
-    <div class="warning">Only use a compatible TRON (TRC20) USDT address. Verify the address before submitting.</div>
-    <button class="primary" onclick="withdrawUSDT()">REQUEST USDT WITHDRAWAL</button>
-  </div>
-<div class="eyebrow history">YOUR WITHDRAWALS</div><div id="withdrawalStatus"></div>
-</section>
+    <section id="gift" class="screen">
+      <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
+      <div class="eyebrow">PROMOTIONS</div>
+      <h2>REDEEM GIFT CODE</h2>
+      <div class="glass">
+        <label>GIFT CODE</label>
+        <input id="giftCode" placeholder="ENTER YOUR CODE">
+        <button class="primary" onclick="redeemGift()">REDEEM CODE <b>→</b></button>
+      </div>
+    </section>
 
-<section id="recharge" class="screen">
-  <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
-  <div class="eyebrow">USDT RECHARGE</div><h2>ADD FUNDS</h2>
-  <div class="glass">
-    <div class="networkBadge">₮ USDT • TRON (TRC20)</div>
-    <h3>Recharge instructions</h3>
-    <ol class="steps">
-      <li>Open your crypto wallet or exchange.</li>
-      <li>Select <b>USDT</b> and choose the <b>TRON / TRC20</b> network.</li>
-      <li>Enter the official GROWX USDT address supplied by admin.</li>
-      <li>Send the amount and keep your transaction hash/reference.</li>
-      <li>Submit your transaction reference for verification.</li>
-    </ol>
-    <div class="warning">The GROWX USDT deposit address is not published yet. Do not send funds until an official address is provided by admin.</div>
-    <label>AMOUNT (USDT)</label><input id="rechargeAmount" inputmode="decimal" placeholder="0.00">
-    <label>TRANSACTION HASH / REFERENCE</label><input id="rechargeRef" placeholder="Paste transaction reference">
-    <button class="primary" onclick="submitRecharge()">SUBMIT RECHARGE</button>
-  </div>
-</section>
-<section id="gift" class="screen">
-  <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
-  <div class="eyebrow">PROMOTIONS</div><h2>REDEEM GIFT CODE</h2>
-  <div class="glass">
-    <label>GIFT CODE</label>
-    <input id="giftCode" placeholder="ENTER YOUR CODE">
-    <button class="primary" onclick="redeemGift()">REDEEM CODE <b>→</b></button>
-  </div>
-</section>
-<section id="admin" class="screen adminScreen" class="screen">
-  <button class="back" onclick="go('welcome')">‹ LOGOUT</button>
-  <div class="adminTitle"><div class="eyebrow">RESTRICTED ACCESS</div><h2>ADMIN CONTROL</h2><span>ADMIN</span></div>
-  <div class="adminStats"><div><b>1,284</b><small>MEMBERS</small></div><div><b>642</b><small>ACTIVE</small></div><div><b>87</b><small>PENDING</small></div><div><b>$184K</b><small>PENDING</small></div></div>
-  <div class="glass"><div class="eyebrow">CLIENT SEARCH</div><input id="search" placeholder="Cellphone or client code"><button class="primary" onclick="openClient()">OPEN CLIENT</button></div>
-  <div class="glass"><div class="eyebrow">WITHDRAWAL SEQUENCE</div><div class="queueOrder">OLDEST → NEWEST</div><div id="queue"></div></div>
-  <div class="glass"><div class="eyebrow">CLIENT ACCOUNT</div><div id="clientPanel"><small>Search a client to view account information.</small></div></div>
-  <small>Prototype admin interface. Real authorization and financial processing require a secure backend.</small>
-</section>
+    <section id="admin" class="screen adminScreen">
+      <button class="back" onclick="go('welcome')">‹ LOGOUT</button>
+      <div class="adminTitle"><div class="eyebrow">RESTRICTED ACCESS</div><h2>ADMIN CONTROL</h2><span>ADMIN</span></div>
+      <div class="glass"><div class="eyebrow">CLIENT SEARCH</div><input id="search" placeholder="Cellphone or client code"><button class="primary" onclick="openClient()">OPEN CLIENT</button></div>
+      <div class="glass"><div class="eyebrow">WITHDRAWAL SEQUENCE</div><div class="queueOrder">OLDEST → NEWEST</div><div id="queue"></div></div>
+      <div class="glass"><div class="eyebrow">CLIENT ACCOUNT</div><div id="clientPanel"><small>Search a client to view account information.</small></div></div>
+      <small>Admin interface connected to Supabase backend. All actions logged.</small>
+    </section>
 
-<section id="game" class="screen gameScreen">
-  <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
-  <div class="eyebrow">GROWX ARCADE</div>
-  <h2>GROW RUSH</h2>
-  <div class="gameHero">
-    <div class="gameBadge">🎮 LIVE ROUND</div>
-    <div class="gameStats"><div><small>SCORE</small><b id="gameScore">0</b></div><div><small>TIME</small><b id="gameTimer">20</b></div><div><small>BEST</small><b id="gameBest">0</b></div></div>
-    <button id="gameTree" class="gameTree" onclick="tapGrow()">🌱</button>
-    <div id="gameHint">TAP THE TREE TO GROW</div>
-    <button class="primary" onclick="startGame()">START ROUND</button>
-  </div>
-</section>
+    <section id="game" class="screen gameScreen">
+      <button class="back" onclick="go('dashboard')">‹ DASHBOARD</button>
+      <div class="eyebrow">GROWX ARCADE</div>
+      <h2>GROW RUSH</h2>
+      <div class="gameHero">
+        <div class="gameBadge">🎮 LIVE ROUND</div>
+        <div class="gameStats"><div><small>SCORE</small><b id="gameScore">0</b></div><div><small>TIME</small><b id="gameTimer">20</b></div><div><small>BEST</small><b id="gameBest">0</b></div></div>
+        <button id="gameTree" class="gameTree" onclick="tapGrow()">🌱</button>
+        <div id="gameHint">TAP THE TREE TO GROW</div>
+        <button class="primary" onclick="startGame()">START ROUND</button>
+      </div>
+    </section>
 
-<nav id="memberNav" class="bottomNav memberOnly">
-  <button onclick="go('dashboard')"><span>⌂</span>HOME</button>
-  <button onclick="go('packages')"><span>◈</span>PACKAGES</button>
-  <button onclick="go('recharge')"><span>＋</span>RECHARGE</button>
-  <button onclick="go('wallet')"><span>◉</span>WALLET</button>
-  <button onclick="go('withdraw')"><span>↗</span>WITHDRAW</button>
-</nav>
-</main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-config.js"></script>
-<script src="app.js"></script>
+    <nav id="memberNav" class="bottomNav memberOnly">
+      <button onclick="go('dashboard')"><span>⌂</span>HOME</button>
+      <button onclick="go('packages')"><span>◈</span>PACKAGES</button>
+      <button onclick="go('recharge')"><span>＋</span>RECHARGE</button>
+      <button onclick="go('wallet')"><span>◉</span>WALLET</button>
+      <button onclick="go('withdraw')"><span>↗</span>WITHDRAW</button>
+    </nav>
+  </main>
+
+  <!-- Supabase Scripts (anon key only) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="supabase-auth.js"></script>
+  <script src="supabase-db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
